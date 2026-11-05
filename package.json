@@ -1,0 +1,24 @@
+{
+  "name": "camera-tracking-pixel-retro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Camera Tracking (RetroLens) versi web: Pixel Retro Playground untuk GitHub Pages.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhwnlabs/cameratracking.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs --require-vendor && node scripts/check-dist.mjs",
+    "build:cdn": "node scripts/build.mjs && node scripts/check-dist.mjs",
+    "serve": "node scripts/serve.mjs dist --base /cameratracking/",
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.22"
+  }
+}
