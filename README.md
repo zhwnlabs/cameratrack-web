@@ -56,19 +56,6 @@ npm run serve              # http://localhost:4173/cameratracking/
 
 Kamera di browser hanya jalan lewat **HTTPS atau localhost**.
 
-## Deploy ke GitHub Pages
-
-1. Gabungkan branch ini ke `main`.
-2. Di GitHub: **Settings → Pages → Source: GitHub Actions**.
-3. Workflow `.github/workflows/deploy.yml` otomatis menjalankan test, build, dan publish.
-4. Situs tersedia di `https://<pengguna>.github.io/cameratracking/`.
-
-Semua path bersifat relatif, jadi situs berjalan dari subdirektori tanpa konfigurasi tambahan. `npm run build` gagal bila runtime MediaPipe belum terpasang, sehingga build produksi tidak diam-diam bergantung pada CDN.
-
-## Pengujian
-
-- `npm test`: 28 unit test (geometri, logika gestur, 11 filter).
-- `node tests/e2e.cjs`: uji Chromium dengan kamera palsu dan stub MediaPipe (`tests/fixtures/`) yang menyuntikkan landmark tangan. Mencakup start/stop/reset, pinch, dua kepalan, izin ditolak, kamera tidak ada, auto-stop, responsif, dan reduced motion.
 
 ## Versi desktop (Python)
 
