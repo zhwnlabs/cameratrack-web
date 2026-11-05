@@ -5,14 +5,14 @@
  */
 
 export const PALETTE = Object.freeze({
-  blue: '#79C8FF',
-  sky: '#A9DEFF',
-  deep: '#243B68',
-  pink: '#FF9ECF',
-  bubble: '#FFB8DC',
-  lav: '#C8B6FF',
-  cream: '#FFF5E9',
-  dark: '#25263A',
+  blue: '#82BDD9',
+  sky: '#B6EEEB',
+  deep: '#5566A1',
+  pink: '#6988C0',
+  bubble: '#B6EEEB',
+  lav: '#96CAD9',
+  cream: '#FFFFFF',
+  dark: '#4D4985',
   white: '#FFFFFF',
 });
 

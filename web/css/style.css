@@ -4,14 +4,14 @@
    ===================================================================== */
 
 :root {
-  --blue: #79c8ff;
-  --sky: #a9deff;
-  --deep: #243b68;
-  --pink: #ff9ecf;
-  --bubble: #ffb8dc;
-  --lav: #c8b6ff;
-  --cream: #fff5e9;
-  --dark: #25263a;
+  --blue: #96CAD9;
+  --sky: #B6EEEB;
+  --deep: #5566A1;
+  --pink: #6988C0;
+  --bubble: #B6EEEB;
+  --lav: #B6EEEB;
+  --cream: #FFFFFF;
+  --dark: #4D4985;
   --white: #ffffff;
 
   --px: 4px;
@@ -157,7 +157,7 @@ kbd {
 .divider {
   height: 16px;
   margin: 8px 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%23FF9ECF'/%3E%3Crect x='16' y='4' width='16' height='8' fill='%2325263A'/%3E%3Crect x='32' width='16' height='16' fill='%2379C8FF'/%3E%3Crect x='48' y='4' width='16' height='8' fill='%2325263A'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%236988C0'/%3E%3Crect x='16' y='4' width='16' height='8' fill='%234D4985'/%3E%3Crect x='32' width='16' height='16' fill='%2382BDD9'/%3E%3Crect x='48' y='4' width='16' height='8' fill='%234D4985'/%3E%3C/svg%3E");
   background-size: 64px 16px;
   image-rendering: pixelated;
 }
@@ -197,7 +197,7 @@ kbd {
     0 var(--px) 0 0 var(--bc),
     calc(-1 * var(--px)) 0 0 0 var(--bc),
     var(--px) 0 0 0 var(--bc),
-    inset 0 calc(-1 * var(--px)) 0 0 rgb(37 38 58 / 0.22),
+    inset 0 calc(-1 * var(--px)) 0 0 rgb(77 73 133 / 0.22),
     0 calc(3 * var(--px)) 0 0 var(--deep);
   transition: transform 80ms steps(2), box-shadow 80ms steps(2), background-color 80ms steps(2);
 }
@@ -213,17 +213,17 @@ kbd {
     0 var(--px) 0 0 var(--bc),
     calc(-1 * var(--px)) 0 0 0 var(--bc),
     var(--px) 0 0 0 var(--bc),
-    inset 0 var(--px) 0 0 rgb(37 38 58 / 0.22);
+    inset 0 var(--px) 0 0 rgb(77 73 133 / 0.22);
 }
 .px-btn:disabled {
-  --bg: #d9d4e8;
-  color: #7a7b96;
+  --bg: #E1F0F4;
+  color: #5566A1;
   cursor: not-allowed;
   box-shadow:
-    0 calc(-1 * var(--px)) 0 0 #7a7b96,
-    0 var(--px) 0 0 #7a7b96,
-    calc(-1 * var(--px)) 0 0 0 #7a7b96,
-    var(--px) 0 0 0 #7a7b96;
+    0 calc(-1 * var(--px)) 0 0 #5566A1,
+    0 var(--px) 0 0 #5566A1,
+    calc(-1 * var(--px)) 0 0 0 #5566A1,
+    var(--px) 0 0 0 #5566A1;
 }
 .px-btn:disabled canvas {
   opacity: 0.45;
@@ -238,7 +238,7 @@ kbd {
 }
 .px-btn--lav {
   --bg: var(--lav);
-  --bg-hover: #ddd0ff;
+  --bg-hover: #FFFFFF;
 }
 .px-btn--cream,
 .px-btn--ghost {
@@ -696,7 +696,7 @@ main,
   --sh: var(--pink);
   max-width: 1000px;
   margin-inline: auto;
-  background: var(--deep);
+  background: var(--dark);
   padding: 16px;
 }
 .cabinet__marquee {
@@ -787,7 +787,7 @@ main,
   position: absolute;
   inset: 12px;
   pointer-events: none;
-  background-image: repeating-linear-gradient(to bottom, transparent 0 3px, rgb(37 38 58 / 0.14) 3px 4px);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 3px, rgb(77 73 133 / 0.14) 3px 4px);
 }
 
 .screen-overlay {
@@ -796,7 +796,7 @@ main,
   display: grid;
   place-items: center;
   padding: 12px;
-  background: var(--deep);
+  background: var(--dark);
   z-index: 3;
   overflow: auto;
 }
@@ -1148,7 +1148,7 @@ main,
 /* ------------------------------------------------------------------ footer */
 
 .footer {
-  background: var(--deep);
+  background: var(--dark);
   color: var(--cream);
   border-top: var(--px) solid var(--dark);
 }
@@ -1417,4 +1417,46 @@ body.is-tracking .led--on {
   .pxp {
     display: none;
   }
+}
+
+/* ------------------------------------------------------------------
+   Penyesuaian kontras palet cyan-indigo
+   Steel Blue (--pink) terlalu terang untuk teks gelap, jadi teks di atasnya
+   dibuat putih dengan bayangan indigo ala game retro.
+------------------------------------------------------------------- */
+.skip-link,
+.badge--pink,
+.px-btn--pink,
+.cabinet__title,
+.detect-pop,
+.chip[aria-checked='true'],
+.nav__link.is-active,
+.overlay__privacy strong {
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--dark);
+}
+.card--pink {
+  background: var(--sky);
+}
+.card__num,
+.hero__sub,
+.hint {
+  color: var(--dark);
+}
+.overlay__text strong {
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--dark);
+}
+/* Teks kecil memakai Muted Blue (kontras 5,5:1); Steel Blue dipakai untuk tombol besar dan ikon. */
+.badge--pink,
+.detect-pop,
+.chip[aria-checked='true'],
+.px-btn--sm.px-btn--pink,
+.skip-link,
+.overlay__privacy strong {
+  background-color: var(--deep);
+}
+.hero__line--accent,
+.section__title {
+  color: var(--dark);
 }
