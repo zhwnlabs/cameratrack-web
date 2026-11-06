@@ -154,16 +154,16 @@ function cloud() {
   return g.outline(P.blue);
 }
 
-function heart() {
+function pinkStar() {
   return fromMap(
     [
-      '.XX.XX.',
-      'XppXPPX',
-      'XpPPPPX',
-      'XPPPPPX',
-      '.XPPPX.',
-      '..XPX..',
       '...X...',
+      '..XpX..',
+      'XXXpXXX',
+      'XpPPPPX',
+      '.XPPPX.',
+      '.XPXPX.',
+      '.XX.XX.',
     ],
     P.dark,
     { p: P.cream, P: P.pink },
@@ -317,7 +317,7 @@ function buildIcon(name, color) {
   return fromMap(map, color);
 }
 
-const BIG = { camera, hand, cloud, heart, star, sparkle, logo };
+const BIG = { camera, hand, cloud, pinkStar, star, sparkle, logo };
 
 /** Bangun grid sprite berdasarkan nama. Nama ikon diawali `icon-` atau `g-`. */
 export function buildSprite(name, colorName = 'dark') {

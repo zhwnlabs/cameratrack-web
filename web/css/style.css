@@ -630,15 +630,15 @@ main,
     transform: rotate(8deg);
   }
 }
-.hero__heart,
+.hero__pinkstar,
 .hero__spark {
   position: absolute;
 }
-.hero__heart--a {
+.hero__pinkstar--a {
   left: 8%;
   bottom: 14%;
 }
-.hero__heart--b {
+.hero__pinkstar--b {
   right: 12%;
   top: 8%;
 }

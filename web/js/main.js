@@ -68,12 +68,12 @@ function buildSky() {
     sky.appendChild(c);
   }
 
-  // bintang berkedip, hati dan kilau melayang
+  // bintang berkedip, bintang pink dan kilau melayang
   const count = small ? 8 : 16;
   const kinds = [
     ['star', 3, null],
     ['sparkle', 3, 'white'],
-    ['heart', 3, null],
+    ['pinkStar', 3, null],
     ['sparkle', 2, 'bubble'],
     ['star', 2, null],
   ];
@@ -83,8 +83,8 @@ function buildSky() {
     c.style.left = `${3 + rand() * 92}%`;
     c.style.top = `${4 + rand() * 90}%`;
     c.style.animationDelay = `-${(rand() * 3).toFixed(2)}s`;
-    c.classList.add(name === 'heart' ? 'float' : 'twinkle');
-    if (name === 'heart') c.style.animationDuration = `${(3 + rand() * 3).toFixed(1)}s`;
+    c.classList.add(name === 'pinkStar' ? 'float' : 'twinkle');
+    if (name === 'pinkStar') c.style.animationDuration = `${(3 + rand() * 3).toFixed(1)}s`;
     sky.appendChild(c);
   }
 }
