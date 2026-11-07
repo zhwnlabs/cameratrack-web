@@ -41,7 +41,7 @@ export function installClickBursts() {
   );
 }
 
-const ICON_BY_KIND = { ok: 'heart', info: 'star', err: 'icon-warn' };
+const ICON_BY_KIND = { ok: 'pinkStar', info: 'star', err: 'icon-warn' };
 
 /**
  * Popup pixel di bawah layar.
