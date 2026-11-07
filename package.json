@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhwnlabs/cameratracking.git"
+    "url": "git+https://github.com/zhwnlabs/cameratrack-web.git"
   },
   "engines": {
     "node": ">=20"
