@@ -5,15 +5,18 @@
  */
 
 export const PALETTE = Object.freeze({
-  blue: '#82BDD9',
-  sky: '#B6EEEB',
-  deep: '#5566A1',
-  pink: '#6988C0',
-  bubble: '#B6EEEB',
-  lav: '#96CAD9',
-  cream: '#FFFFFF',
-  dark: '#4D4985',
+  // Metalheart / Y2K: tinta hitam, kobalt, langit, kertas putih, merah sebagai aksen kecil.
+  // Nama kunci dipertahankan agar atribut data-color dan pemanggil lain tetap valid.
+  blue: '#7FB4F5',
+  sky: '#DCEAFB',
+  deep: '#0F3BB3',
+  pink: '#1E5BE6',
+  bubble: '#EAF2FD',
+  lav: '#9DB3D6',
+  cream: '#F4F4F1',
+  dark: '#0B0B0E',
   white: '#FFFFFF',
+  red: '#E4202A',
 });
 
 class Grid {

@@ -5,7 +5,7 @@
 import { PALETTE, buildSprite } from './sprites.js';
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const COLORS = [PALETTE.pink, PALETTE.bubble, PALETTE.blue, PALETTE.sky, PALETTE.lav, PALETTE.cream];
+const COLORS = [PALETTE.pink, PALETTE.red, PALETTE.blue, PALETTE.dark, PALETTE.white, PALETTE.deep];
 
 /** Semburan partikel persegi di titik (x, y) layar. */
 export function burst(x, y, count = 10) {
@@ -20,7 +20,7 @@ export function burst(x, y, count = 10) {
     p.style.cssText =
       `left:${x - size / 2}px;top:${y - size / 2}px;width:${size}px;height:${size}px;` +
       `background:${COLORS[i % COLORS.length]};` +
-      `box-shadow:0 0 0 2px ${PALETTE.dark};` +
+      `box-shadow:0 0 0 1px ${PALETTE.dark};` +
       `--dx:${Math.round(Math.cos(angle) * dist)}px;--dy:${Math.round(Math.sin(angle) * dist)}px`;
     p.addEventListener('animationend', () => p.remove(), { once: true });
     frag.appendChild(p);
