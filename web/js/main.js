@@ -3,7 +3,7 @@
  */
 import { installClickBursts } from './fx.js';
 import { Playground } from './playground.js';
-import { buildSprite, cursorGrids, mountSprites, spriteToDataUri } from './sprites.js';
+import { cursorGrids, mountSprites, spriteToDataUri } from './sprites.js';
 
 const root = document.documentElement;
 root.classList.add('js');
@@ -23,7 +23,7 @@ function installCursor() {
   }
 }
 
-/* ------------------------------------------------------ dekorasi latar langit */
+/* ------------------------------------------------------ dekorasi latar */
 
 /** Generator acak deterministik supaya tata letak dekorasi stabil. */
 function rng(seed) {
@@ -39,53 +39,24 @@ function buildSky() {
   if (!sky) return;
   const small = window.innerWidth < 640;
   const rand = rng(2026);
+  const NS = 'http://www.w3.org/2000/svg';
 
-  const make = (name, scale, color) => {
-    const c = document.createElement('canvas');
-    buildSprite(name, color).toCanvas(c);
-    const g = { w: c.width, h: c.height };
-    c.style.width = `${g.w * scale}px`;
-    c.style.height = `${g.h * scale}px`;
-    c.style.imageRendering = 'pixelated';
-    c.setAttribute('aria-hidden', 'true');
-    return c;
-  };
-
-  // awan melintas pelan
-  const clouds = small ? 3 : 5;
-  for (let i = 0; i < clouds; i++) {
-    const c = make('cloud', 4 + Math.floor(rand() * 3));
-    c.style.top = `${6 + rand() * 70}%`;
-    c.style.left = '0';
-    c.style.opacity = '0.9';
-    if (!reduced.matches) {
-      c.classList.add('drift');
-      c.style.animationDuration = `${90 + Math.floor(rand() * 90)}s`;
-      c.style.animationDelay = `-${Math.floor(rand() * 150)}s`;
-    } else {
-      c.style.left = `${rand() * 80}%`;
-    }
-    sky.appendChild(c);
-  }
-
-  // bintang berkedip, bintang pink dan kilau melayang
-  const count = small ? 8 : 16;
-  const kinds = [
-    ['star', 3, null],
-    ['sparkle', 3, 'white'],
-    ['pinkStar', 3, null],
-    ['sparkle', 2, 'bubble'],
-    ['star', 2, null],
-  ];
+  // Bintang empat sudut ala vektor Y2K dan tanda silang kecil sebagai penanda registrasi.
+  const colors = ['#1E5BE6', '#7FB4F5', '#1E5BE6', '#E4202A'];
+  const count = small ? 7 : 14;
   for (let i = 0; i < count; i++) {
-    const [name, scale, color] = kinds[i % kinds.length];
-    const c = make(name, scale + (rand() < 0.3 ? 1 : 0), color ?? 'dark');
-    c.style.left = `${3 + rand() * 92}%`;
-    c.style.top = `${4 + rand() * 90}%`;
-    c.style.animationDelay = `-${(rand() * 3).toFixed(2)}s`;
-    c.classList.add(name === 'pinkStar' ? 'float' : 'twinkle');
-    if (name === 'pinkStar') c.style.animationDuration = `${(3 + rand() * 3).toFixed(1)}s`;
-    sky.appendChild(c);
+    const size = 10 + Math.floor(rand() * 4) * 5;
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('width', String(size));
+    svg.setAttribute('height', String(size));
+    svg.setAttribute('aria-hidden', 'true');
+    svg.style.cssText = `left:${(3 + rand() * 92).toFixed(1)}%;top:${(4 + rand() * 90).toFixed(1)}%;color:${colors[i % colors.length]}`;
+    const use = document.createElementNS(NS, 'use');
+    use.setAttribute('href', '#star4');
+    svg.appendChild(use);
+    svg.style.animationDelay = `-${(rand() * 3).toFixed(2)}s`;
+    svg.classList.add('twinkle');
+    sky.appendChild(svg);
   }
 }
 

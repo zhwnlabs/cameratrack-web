@@ -3,24 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Camera Tracking · Pixel Retro Playground</title>
+    <title>Camera Tracking · Metalheart Playground</title>
     <meta
       name="description"
-      content="Camera Tracking Pixel Retro Playground: buka portal filter dengan gerakan tangan langsung di browser. Diproses lokal, tanpa unggah video."
+      content="Camera Tracking: buka portal filter dengan gerakan tangan langsung di browser. Diproses lokal, tanpa unggah video."
     />
-    <meta name="theme-color" content="#82BDD9" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='1' y='4' width='14' height='10' fill='%234D4985'/%3E%3Crect x='2' y='5' width='12' height='8' fill='%2382BDD9'/%3E%3Crect x='2' y='11' width='12' height='2' fill='%236988C0'/%3E%3Crect x='4' y='2' width='4' height='2' fill='%234D4985'/%3E%3Crect x='6' y='6' width='4' height='4' fill='%234D4985'/%3E%3Crect x='7' y='7' width='2' height='2' fill='%2396CAD9'/%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#F4F4F1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='.5' y='.5' width='27' height='27' fill='%23fff' stroke='%230B0B0E'/%3E%3Cpath d='M14 3l2.4 8.6L25 14l-8.6 2.4L14 25l-2.4-8.6L3 14l8.6-2.4z' fill='%231E5BE6' stroke='%230B0B0E'/%3E%3Ccircle cx='22.5' cy='5.5' r='1.8' fill='%23E4202A'/%3E%3C/svg%3E" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
+    <!-- simbol logo, dipakai ulang lewat <use> -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="mark" viewBox="0 0 28 28">
+        <rect x="0.5" y="0.5" width="27" height="27" fill="#fff" stroke="#0B0B0E" />
+        <path d="M14 3l2.4 8.6L25 14l-8.6 2.4L14 25l-2.4-8.6L3 14l8.6-2.4z" fill="#1E5BE6" stroke="#0B0B0E" />
+        <circle cx="22.5" cy="5.5" r="1.8" fill="#E4202A" />
+      </symbol>
+      <symbol id="star4" viewBox="0 0 20 20">
+        <path d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0z" fill="currentColor" />
+      </symbol>
+    </svg>
+
     <a class="skip-link" href="#playground">Lewati ke playground</a>
 
     <!-- dekorasi latar: diisi oleh js/main.js -->
@@ -29,13 +41,13 @@
     <header class="nav" id="top">
       <div class="nav__inner">
         <a class="brand" href="#home" aria-label="Camera Tracking, ke bagian atas">
-          <canvas data-sprite="logo" data-scale="3"></canvas>
-          <span class="brand__name">CAMERA<br />TRACKING</span>
+          <svg class="brand__mark" width="30" height="30" aria-hidden="true"><use href="#mark" /></svg>
+          <span class="brand__name">camera <br />tracking.</span>
         </a>
         <nav class="nav__menu" aria-label="Navigasi utama">
-          <a class="nav__link" href="#home" data-section="home"><span>Home</span></a>
-          <a class="nav__link" href="#playground" data-section="playground"><span>Playground</span></a>
-          <a class="nav__link" href="#about" data-section="about"><span>About</span></a>
+          <a class="nav__link" href="#home" data-section="home"><i>01</i><span>home</span></a>
+          <a class="nav__link" href="#playground" data-section="playground"><i>02</i><span>playground</span></a>
+          <a class="nav__link" href="#about" data-section="about"><i>03</i><span>about</span></a>
         </nav>
       </div>
     </header>
@@ -45,40 +57,100 @@
       <section class="hero section" id="home" aria-labelledby="hero-title">
         <div class="hero__inner">
           <div class="hero__text">
-            <p class="badge badge--pink"><canvas data-sprite="star" data-scale="2"></canvas> PLAYER 1 SIAP</p>
+            <p class="badge badge--pink"><svg class="badge__star" width="12" height="12" aria-hidden="true"><use href="#star4" /></svg>tracking siap</p>
             <h1 class="hero__title" id="hero-title">
-              <span class="hero__line">CAMERA</span>
-              <span class="hero__line hero__line--accent">TRACKING</span>
+              <span class="hero__line">camera</span>
+              <span class="hero__line hero__line--accent">tracking.</span>
             </h1>
-            <p class="hero__sub">PIXEL RETRO PLAYGROUND</p>
+            <p class="hero__sub">metalheart playground / hand portal</p>
             <p class="lead">
               Gerakkan tanganmu di depan kamera, lalu bukalah <strong>portal berfilter</strong> di antara kedua
               jarimu. Pelacakan tangan berjalan langsung di browser, tanpa unggah video dan tanpa instal apa pun.
             </p>
             <div class="hero__cta">
               <a class="px-btn px-btn--pink px-btn--big" href="#playground" id="cta-start">
-                <canvas data-sprite="icon-play" data-scale="3" data-color="dark"></canvas>
-                <span>MULAI BERMAIN</span>
+                <canvas data-sprite="icon-play" data-scale="3" data-color="white"></canvas>
+                <span>mulai bermain</span>
               </a>
               <a class="px-btn px-btn--ghost" href="#about">
-                <span>CARA KERJA</span>
+                <span>cara kerja</span>
               </a>
             </div>
-            <p class="hint">Tekan <kbd>MULAI BERMAIN</kbd> untuk menuju arcade.</p>
+            <p class="hint">Tekan <kbd>mulai bermain</kbd> untuk menuju playground.</p>
           </div>
 
           <div class="hero__art" aria-hidden="true">
-            <div class="bubble bubble--hero">
-              <span>HAI! BENTANGKAN TANGANMU!</span>
-            </div>
+            <p class="bubble bubble--hero"><i class="bubble__dot"></i>bentangkan tanganmu</p>
             <div class="hero__stage">
-              <canvas class="float float--slow" data-sprite="camera" data-scale="9"></canvas>
-              <canvas class="hand-sprite" data-sprite="hand" data-scale="8"></canvas>
-              <canvas class="hero__pinkstar hero__pinkstar--a float" data-sprite="pinkStar" data-scale="5"></canvas>
-              <canvas class="hero__pinkstar hero__pinkstar--b float float--delay" data-sprite="pinkStar" data-scale="4"></canvas>
-              <canvas class="hero__spark hero__spark--a twinkle" data-sprite="sparkle" data-color="white" data-scale="5"></canvas>
-              <canvas class="hero__spark hero__spark--b twinkle twinkle--delay" data-sprite="sparkle" data-color="bubble" data-scale="4"></canvas>
-              <canvas class="hero__spark hero__spark--c twinkle" data-sprite="sparkle" data-color="deep" data-scale="3"></canvas>
+              <span class="win win--a"></span>
+              <span class="win win--b"></span>
+              <span class="win win--c"></span>
+              <span class="win win--d"></span>
+
+              <svg class="metalheart" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <defs>
+                  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#0A2A8A" />
+                    <stop offset="0.3" stop-color="#1E5BE6" />
+                    <stop offset="0.5" stop-color="#EAF2FD" />
+                    <stop offset="0.7" stop-color="#2F7BEA" />
+                    <stop offset="1" stop-color="#0F3BB3" />
+                  </linearGradient>
+                  <linearGradient id="chrome2" x1="1" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#0F3BB3" />
+                    <stop offset="0.45" stop-color="#7FB4F5" />
+                    <stop offset="0.6" stop-color="#FFFFFF" />
+                    <stop offset="1" stop-color="#1E5BE6" />
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke="#0B0B0E" stroke-width="0.9">
+                  <path d="M20 560C140 420 260 470 330 360 400 250 470 120 560 20" />
+                  <path d="M60 600C190 480 290 520 380 400 470 280 520 200 600 160" />
+                  <path d="M0 200C120 230 230 280 330 350" />
+                  <path d="M250 0C280 120 320 240 336 352" />
+                  <path d="M600 420C500 400 400 380 340 360" />
+                  <path d="M120 600C200 540 300 470 360 380" />
+                </g>
+                <g fill="#fff" stroke="#0B0B0E" stroke-width="1">
+                  <polygon points="336,356 -20,60 -8,84" />
+                  <polygon points="340,350 640,210 632,236" />
+                  <polygon points="330,362 -20,470 0,486" />
+                  <polygon points="338,346 392,-30 410,-20" />
+                  <polygon points="342,362 620,640 596,640" />
+                  <polygon points="334,350 150,-10 172,-4" />
+                </g>
+                <path
+                  d="M352 340C392 140 540 40 650 110V220C590 170 500 200 462 320 440 392 392 398 352 340Z"
+                  fill="url(#chrome)"
+                  stroke="#0B0B0E"
+                  stroke-width="1.2"
+                />
+                <path d="M410 290C440 190 520 120 620 120 550 150 490 230 462 320 450 345 425 325 410 290Z" fill="#fff" opacity="0.92" />
+                <path
+                  d="M318 380C240 410 140 500 60 640H130C190 540 260 480 352 430 350 410 340 395 318 380Z"
+                  fill="url(#chrome2)"
+                  stroke="#0B0B0E"
+                  stroke-width="1.2"
+                />
+                <path d="M322 336C250 240 140 250 90 330 170 290 250 320 322 336Z" fill="url(#chrome)" stroke="#0B0B0E" stroke-width="1.2" />
+                <path d="M360 392C420 430 470 500 500 590 450 520 400 470 346 420Z" fill="url(#chrome2)" stroke="#0B0B0E" stroke-width="1.2" />
+                <ellipse cx="338" cy="356" rx="36" ry="22" transform="rotate(-32 338 356)" fill="url(#chrome)" stroke="#0B0B0E" stroke-width="1.2" />
+                <ellipse cx="330" cy="350" rx="14" ry="6" transform="rotate(-32 330 350)" fill="#fff" opacity="0.95" />
+                <g fill="none" stroke="#E4202A" stroke-width="1.3">
+                  <circle cx="336" cy="352" r="74" />
+                  <circle cx="300" cy="330" r="112" stroke-width="0.9" />
+                  <path d="M470 90v22M459 101h22" />
+                  <path d="M96 470v22M85 481h22" />
+                </g>
+                <g fill="#0B0B0E">
+                  <circle cx="540" cy="520" r="2" />
+                  <circle cx="64" cy="140" r="2" />
+                  <circle cx="500" cy="60" r="1.5" />
+                </g>
+              </svg>
+
+              <span class="stage__cap stage__cap--bl">hand landmarker · 21 titik · 2 tangan</span>
+              <span class="stage__cap stage__cap--tr">fig.01</span>
             </div>
           </div>
         </div>
@@ -89,17 +161,17 @@
       <!-- =========================== PLAYGROUND =========================== -->
       <section class="playground section" id="playground" aria-labelledby="pg-title">
         <header class="section__head">
-          <p class="badge badge--blue">LEVEL 1</p>
-          <h2 class="section__title" id="pg-title">CAMERA PLAYGROUND</h2>
+          <p class="badge badge--blue">02 / playground</p>
+          <h2 class="section__title" id="pg-title">camera playground.</h2>
           <p class="lead lead--narrow">
-            Tekan <strong>MULAI KAMERA</strong>, izinkan akses kamera, lalu bentangkan kedua tanganmu.
+            Tekan <strong>mulai kamera</strong>, izinkan akses kamera, lalu bentangkan kedua tanganmu.
           </p>
         </header>
 
         <div class="cabinet px-box">
           <div class="cabinet__marquee">
             <span class="led led--on" aria-hidden="true"></span>
-            <span class="cabinet__title">ARCADE LENS</span>
+            <span class="cabinet__title">arcade lens</span>
             <span class="led led--on led--alt" aria-hidden="true"></span>
           </div>
 
@@ -117,13 +189,13 @@
               <!-- overlay status: idle / loading / error -->
               <div class="screen-overlay" id="overlay" data-state="idle">
                 <div class="overlay__card overlay__card--idle">
-                  <canvas data-sprite="camera" data-scale="5" class="float float--slow"></canvas>
-                  <p class="overlay__title blink">INSERT COIN</p>
+                  <svg class="overlay__mark" width="56" height="56" aria-hidden="true"><use href="#mark" /></svg>
+                  <p class="overlay__title blink">standby_</p>
                   <p class="overlay__text">
-                    Tekan <strong>MULAI KAMERA</strong> untuk memulai. Browser akan meminta izin kamera.
+                    Tekan <strong>mulai kamera</strong> untuk memulai. Browser akan meminta izin kamera.
                   </p>
                   <p class="overlay__privacy">
-                    <canvas data-sprite="icon-lock" data-scale="2" data-color="deep"></canvas>
+                    <canvas data-sprite="icon-lock" data-scale="2" data-color="dark"></canvas>
                     <span>
                       Kamera hanya dipakai untuk melacak posisi tanganmu. Gambar diproses di perangkatmu dan
                       <strong>tidak pernah diunggah</strong> ke server mana pun.
@@ -132,7 +204,7 @@
                 </div>
 
                 <div class="overlay__card overlay__card--loading">
-                  <p class="overlay__title">LOADING<span class="dots" aria-hidden="true"></span></p>
+                  <p class="overlay__title">loading<span class="dots" aria-hidden="true"></span></p>
                   <div
                     class="loadbar"
                     id="loadbar"
@@ -148,39 +220,39 @@
                 </div>
 
                 <div class="overlay__card overlay__card--error" role="alert">
-                  <canvas data-sprite="icon-warn" data-scale="6" data-color="pink"></canvas>
+                  <canvas data-sprite="icon-warn" data-scale="6" data-color="red"></canvas>
                   <p class="overlay__title overlay__title--error" id="err-title">GAME OVER</p>
                   <p class="overlay__text" id="err-text">Terjadi masalah.</p>
                   <button class="px-btn px-btn--pink" type="button" id="btn-retry">
-                    <canvas data-sprite="icon-reset" data-scale="2" data-color="dark"></canvas>
-                    <span>COBA LAGI</span>
+                    <canvas data-sprite="icon-reset" data-scale="2" data-color="white"></canvas>
+                    <span>coba lagi</span>
                   </button>
                 </div>
               </div>
 
               <!-- efek ketika tangan terdeteksi -->
               <div class="detect-pop" id="detect-pop" aria-hidden="true">
-                <canvas data-sprite="pinkStar" data-scale="3"></canvas> TANGAN TERDETEKSI!
+                <svg width="12" height="12"><use href="#star4" /></svg> tangan terdeteksi
               </div>
             </div>
 
             <!-- kontrol utama -->
             <div class="controls" role="group" aria-label="Kontrol kamera">
               <button class="px-btn px-btn--pink" type="button" id="btn-start">
-                <canvas data-sprite="icon-play" data-scale="2" data-color="dark"></canvas>
-                <span>MULAI KAMERA</span>
+                <canvas data-sprite="icon-play" data-scale="2" data-color="white"></canvas>
+                <span>mulai kamera</span>
               </button>
               <button class="px-btn px-btn--lav" type="button" id="btn-stop" disabled>
                 <canvas data-sprite="icon-stop" data-scale="2" data-color="dark"></canvas>
-                <span>BERHENTI</span>
+                <span>berhenti</span>
               </button>
               <button class="px-btn px-btn--blue" type="button" id="btn-reset">
                 <canvas data-sprite="icon-reset" data-scale="2" data-color="dark"></canvas>
-                <span>RESET</span>
+                <span>reset</span>
               </button>
               <button class="px-btn px-btn--cream" type="button" id="btn-shot" disabled>
                 <canvas data-sprite="icon-photo" data-scale="2" data-color="dark"></canvas>
-                <span>SIMPAN FOTO</span>
+                <span>simpan foto</span>
               </button>
             </div>
           </div>
@@ -188,11 +260,11 @@
           <!-- panel status -->
           <div class="hud" aria-label="Status tracking">
             <div class="stat" id="stat-camera">
-              <span class="stat__label">KAMERA</span>
+              <span class="stat__label">kamera</span>
               <span class="stat__value"><i class="led" id="led-camera"></i><b id="st-camera">MATI</b></span>
             </div>
             <div class="stat">
-              <span class="stat__label">TANGAN</span>
+              <span class="stat__label">tangan</span>
               <span class="stat__value">
                 <span class="slots" id="hand-slots">
                   <canvas data-sprite="icon-hand" data-scale="2" data-color="lav" class="slot" id="slot-1"></canvas>
@@ -202,15 +274,15 @@
               </span>
             </div>
             <div class="stat">
-              <span class="stat__label">MODE</span>
+              <span class="stat__label">mode</span>
               <span class="stat__value"><b id="st-mode">2D QUAD</b></span>
             </div>
             <div class="stat">
-              <span class="stat__label">FILTER</span>
+              <span class="stat__label">filter</span>
               <span class="stat__value"><b id="st-filter">DUAL-TONE</b></span>
             </div>
             <div class="stat">
-              <span class="stat__label">FPS</span>
+              <span class="stat__label">fps</span>
               <span class="stat__value"><b id="st-fps">--</b></span>
             </div>
           </div>
@@ -218,7 +290,7 @@
           <!-- pemilih filter dan mode -->
           <div class="panel">
             <div class="panel__head">
-              <h3 class="panel__title">PILIH FILTER</h3>
+              <h3 class="panel__title">pilih filter</h3>
               <div class="panel__tools">
                 <button class="px-btn px-btn--sm px-btn--ghost" type="button" id="btn-prev" aria-label="Filter sebelumnya (P)">
                   <canvas data-sprite="icon-left" data-scale="2" data-color="dark"></canvas>
@@ -244,17 +316,17 @@
         <div class="gestures">
           <article class="card card--blue">
             <canvas data-sprite="g-portal" data-scale="4"></canvas>
-            <h3 class="card__title">BUKA PORTAL</h3>
+            <h3 class="card__title">buka portal.</h3>
             <p>Bentangkan <strong>dua tangan</strong>. Ujung jempol dan telunjuk membentuk empat sudut portal.</p>
           </article>
           <article class="card card--pink">
             <canvas data-sprite="g-pinch" data-scale="4"></canvas>
-            <h3 class="card__title">GANTI FILTER</h3>
+            <h3 class="card__title">ganti filter.</h3>
             <p><strong>Pinch</strong> jempol dan kelingking dalam satu tangan untuk filter berikutnya.</p>
           </article>
           <article class="card card--lav">
             <canvas data-sprite="g-fist" data-scale="4"></canvas>
-            <h3 class="card__title">MODE 2D / 3D</h3>
+            <h3 class="card__title">mode 2D / 3D.</h3>
             <p><strong>Kepalkan kedua tangan</strong> sekaligus untuk berpindah antara portal 2D dan mesh 3D.</p>
           </article>
         </div>
@@ -265,27 +337,27 @@
       <!-- ============================== ABOUT ============================== -->
       <section class="about section" id="about" aria-labelledby="about-title">
         <header class="section__head">
-          <p class="badge badge--pink">INFO</p>
-          <h2 class="section__title" id="about-title">TENTANG PROYEK</h2>
+          <p class="badge badge--pink">03 / info</p>
+          <h2 class="section__title" id="about-title">tentang proyek.</h2>
         </header>
 
         <div class="about__grid">
           <article class="card card--cream">
             <p class="card__num">01</p>
-            <h3 class="card__title">APA ITU CAMERA TRACKING?</h3>
+            <h3 class="card__title">apa itu camera tracking?</h3>
             <p>
               Camera Tracking adalah pelacakan gerakan tangan lewat webcam. Posisi 21 titik pada tiap tangan dikenali
               secara real-time, lalu dipakai sebagai pengontrol: tanpa mouse, tanpa sentuhan.
             </p>
             <p>
               Proyek ini adalah versi web dari <strong>RetroLens</strong> (Python + OpenCV), dikemas ulang menjadi
-              playground pixel yang bisa langsung dicoba.
+              playground yang bisa langsung dicoba.
             </p>
           </article>
 
           <article class="card card--blue">
             <p class="card__num">02</p>
-            <h3 class="card__title">BAGAIMANA CARA KERJANYA?</h3>
+            <h3 class="card__title">bagaimana cara kerjanya?</h3>
             <ol class="steps">
               <li>Kamera menangkap frame dan dicerminkan seperti kaca.</li>
               <li>Model Hand Landmarker mencari hingga <b>2 tangan</b>.</li>
@@ -297,7 +369,7 @@
 
           <article class="card card--pink">
             <p class="card__num">03</p>
-            <h3 class="card__title">TEKNOLOGI</h3>
+            <h3 class="card__title">teknologi.</h3>
             <ul class="tech">
               <li><b>MediaPipe Hand Landmarker</b> (model <code>hand_landmarker.task</code> yang sama dengan versi Python)</li>
               <li><b>Canvas 2D</b> untuk filter piksel dan render portal</li>
@@ -308,9 +380,9 @@
 
           <article class="card card--lav">
             <p class="card__num">04</p>
-            <h3 class="card__title">CARA MENCOBANYA</h3>
+            <h3 class="card__title">cara mencobanya.</h3>
             <ol class="steps">
-              <li>Buka <a href="#playground">Playground</a>, tekan <b>MULAI KAMERA</b>.</li>
+              <li>Buka <a href="#playground">Playground</a>, tekan <b>mulai kamera</b>.</li>
               <li>Izinkan akses kamera di browser.</li>
               <li>Mundur hingga kedua tanganmu terlihat penuh.</li>
               <li>Bentangkan tangan, lalu coba pinch dan kepalan!</li>
@@ -319,41 +391,33 @@
         </div>
 
         <aside class="privacy px-box" aria-label="Privasi">
-          <canvas data-sprite="icon-lock" data-scale="4" data-color="deep"></canvas>
+          <canvas data-sprite="icon-lock" data-scale="4" data-color="dark"></canvas>
           <p>
-            <b>PRIVASI:</b> seluruh proses kamera berjalan di perangkatmu. Tidak ada gambar atau rekaman yang dikirim
+            <b>privasi:</b> seluruh proses kamera berjalan di perangkatmu. Tidak ada gambar atau rekaman yang dikirim
             ke server. Kamera otomatis dimatikan saat kamu menekan berhenti, meninggalkan playground, atau menutup tab.
           </p>
         </aside>
       </section>
     </main>
 
-    <div class="divider" role="presentation"></div>
-
     <footer class="footer">
+      <div class="footer__horizon" aria-hidden="true"></div>
       <div class="footer__inner">
         <div class="footer__brand">
-          <canvas data-sprite="logo" data-scale="3"></canvas>
+          <svg class="brand__mark" width="30" height="30" aria-hidden="true"><use href="#mark" /></svg>
           <div>
-            <p class="footer__name">CAMERA TRACKING</p>
-            <p class="footer__sub">Pixel Retro Playground · dasar proyek: RetroLens oleh Sy4hdan / syahdanfx</p>
+            <p class="footer__name">camera tracking.</p>
+            <p class="footer__sub">Metalheart playground · dasar proyek: RetroLens oleh Sy4hdan / syahdanfx</p>
           </div>
         </div>
         <a class="px-btn px-btn--sm px-btn--ghost" href="https://github.com/zhwnlabs/cameratrack-web" target="_blank" rel="noopener noreferrer">
-          <span>GITHUB REPO</span>
+          <span>github repo</span>
         </a>
-        <p class="footer__copy">
-          © 2026 zhwnlabs · Lisensi MIT
-          <span class="footer__deco" aria-hidden="true">
-            <canvas data-sprite="pinkStar" data-scale="2"></canvas>
-            <canvas class="twinkle" data-sprite="star" data-scale="2"></canvas>
-            <canvas data-sprite="pinkStar" data-scale="2"></canvas>
-          </span>
-        </p>
+        <p class="footer__copy">© 2026 zhwnlabs · Lisensi MIT</p>
       </div>
     </footer>
 
-    <!-- popup pixel (notifikasi) -->
+    <!-- popup (notifikasi) -->
     <div class="popup-root" id="popup-root" role="status" aria-live="polite"></div>
 
     <noscript>

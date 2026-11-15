@@ -5,7 +5,7 @@
 import { DEFAULT_MAX_PROCESS_PIXELS, PIPELINE } from './config.js';
 import { getFilter } from './filters.js';
 
-const FONT_HUD = "'VT323', 'Courier New', monospace";
+const FONT_HUD = "'IBM Plex Mono', 'Courier New', monospace";
 
 export class FrameRenderer {
   /** @param canvas kanvas tampilan berukuran frameWidth x frameHeight */
@@ -27,7 +27,7 @@ export class FrameRenderer {
     return this.canvas.height;
   }
 
-  clear(color = '#4D4985') {
+  clear(color = '#0B0B0E') {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(0, 0, this.width, this.height);
   }
@@ -60,13 +60,13 @@ export class FrameRenderer {
   drawLandmarks(hands) {
     const { ctx } = this;
     for (const lm of hands) {
-      ctx.fillStyle = '#B6EEEB';
+      ctx.fillStyle = '#FFFFFF';
       for (let i = 0; i < lm.length; i++) {
         const px = Math.round(lm[i].x * this.width);
         const py = Math.round(lm[i].y * this.height);
         ctx.fillRect(px - 2, py - 2, 4, 4);
       }
-      ctx.fillStyle = '#82BDD9';
+      ctx.fillStyle = '#E4202A';
       for (const id of [4, 8, 12, 16, 20]) {
         const px = Math.round(lm[id].x * this.width);
         const py = Math.round(lm[id].y * this.height);
@@ -124,7 +124,7 @@ export class FrameRenderer {
     poly.forEach(([px, py], i) => (i ? ctx.lineTo(px, py) : ctx.moveTo(px, py)));
     ctx.closePath();
     ctx.lineJoin = 'miter';
-    ctx.strokeStyle = '#4D4985';
+    ctx.strokeStyle = '#0B0B0E';
     ctx.lineWidth = 6;
     ctx.stroke();
     ctx.strokeStyle = '#FFFFFF';
@@ -137,16 +137,16 @@ export class FrameRenderer {
   drawHud(modeLabel, filterName) {
     const { ctx } = this;
     ctx.save();
-    ctx.font = `22px ${FONT_HUD}`;
+    ctx.font = `500 16px ${FONT_HUD}`;
     ctx.textBaseline = 'top';
     const lines = [
-      [`MODE: ${modeLabel} [C / 2 KEPALAN]`, '#B6EEEB'],
-      [`FILTER: ${filterName.toUpperCase()} [PINCH / N / P]`, '#B6EEEB'],
+      [`MODE: ${modeLabel} [C / 2 KEPALAN]`, '#DCEAFB'],
+      [`FILTER: ${filterName.toUpperCase()} [PINCH / N / P]`, '#DCEAFB'],
     ];
     lines.forEach(([text, color], i) => {
       const y = 10 + i * 26;
       const tw = ctx.measureText(text).width;
-      ctx.fillStyle = 'rgba(77, 73, 133, 0.85)';
+      ctx.fillStyle = 'rgba(11, 11, 14, 0.82)';
       ctx.fillRect(10, y - 2, tw + 12, 24);
       ctx.fillStyle = color;
       ctx.fillText(text, 16, y);

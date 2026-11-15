@@ -1,4 +1,4 @@
-# Camera Tracking · Pixel Retro Playground
+# Camera Tracking · Metalheart Playground
 
 Versi web dari **RetroLens** (aplikasi Python + OpenCV + MediaPipe). Gerakkan tangan di depan webcam, bukalah *portal* berfilter di antara kedua jari, dan ganti filter lewat gestur. Semua berjalan **di browser**, tanpa backend, dan siap di-hosting lewat **GitHub Pages**.
 
@@ -27,9 +27,9 @@ Tambahan di web: tombol Mulai/Berhenti/Reset, indikator tangan terdeteksi, statu
 - **Filter** (`web/js/tracking/filters.js`): OpenCV diganti operasi piksel murni di Canvas 2D. Dua pendekatan yang perlu diketahui: filter `cartoon` memakai box blur sebagai pengganti `bilateralFilter(9, 250, 250)` (hasilnya hampir identik karena sigma sangat besar), dan ROI yang terlalu besar diperkecil sementara agar FPS tracking terjaga.
 - **Privasi**: video hanya diproses lokal di browser dan tidak pernah dikirim ke server. Kamera dimatikan otomatis saat tombol Berhenti ditekan, saat pengguna menggulir keluar dari playground, saat tab disembunyikan, atau saat halaman ditutup.
 
-## Palet warna
+## Tampilan
 
-White `#FFFFFF`, Ice Cyan `#B6EEEB`, Soft Cyan `#96CAD9`, Sky Blue `#82BDD9`, Steel Blue `#6988C0`, Muted Blue `#5566A1`, Deep Indigo `#4D4985`. Token CSS di `web/css/style.css` dan `web/js/sprites.js` masih memakai nama lama (`--pink` kini Steel Blue, `--lav` Ice Cyan, `--dark` Deep Indigo); nilainya yang berubah.
+Tema Metalheart / Cyber Y2K: kertas putih, garis tinta hitam, panel langit kobalt (`web/img/sky.svg`, awan prosedural dari filter SVG), bentuk vektor metalheart di hero, dan merah sebagai aksen kecil. Token warna ada di `:root` pada `web/css/style.css` (`--ink`, `--paper`, `--cobalt`, `--sky`, `--ice`, `--red`) dan `PALETTE` di `web/js/sprites.js`. Hanya tampilan yang berubah; id, event, dan logika tracking sama seperti sebelumnya.
 
 ## Struktur
 
@@ -69,4 +69,4 @@ Python 3.8–3.11, webcam diperlukan. Kontrol: `C` mode 2D/3D, `N`/`P` filter, `
 
 ## Lisensi dan kredit
 
-Lisensi MIT (lihat `LICENSE`). Berdasarkan proyek asli oleh Sy4hdan / syahdanfx. Font: Press Start 2P, VT323, Silkscreen (Google Fonts, dengan fallback monospace).
+Lisensi MIT (lihat `LICENSE`). Berdasarkan proyek asli oleh Sy4hdan / syahdanfx. Font: Archivo dan IBM Plex Mono (Google Fonts, dengan fallback sistem).
